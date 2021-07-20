@@ -21,10 +21,9 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		
-		Parent root;
 		try {
-			root = FXMLLoader.load(getClass().getResource("/Main.fxml"));
-			Scene scene = new Scene(root,1000,600,Color.ALICEBLUE);
+			Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -35,30 +34,30 @@ public class Main extends Application {
 		Image logo = new Image("icon.png");
 		
 		//logo
-		ImageView imageView = new ImageView(logo);
-		imageView.setX(20);
-		imageView.setY(20);
-		imageView.setFitHeight(60); 
-	    imageView.setFitWidth(60);
+		//ImageView imageView = new ImageView(logo);
+		//imageView.setX(20);
+		//imageView.setY(20);
+		//imageView.setFitHeight(60); 
+	    //imageView.setFitWidth(60);
 		
 		//root.getChildren().add(imageView);
 		
 		//title text
-		Text title = new Text();
-		title.setText("Borrow-Books Library");
-		title.setX(90);
-		title.setY(50);
-		title.setFont(Font.font("verdana",20));
-		title.setFill(Color.rgb(9, 51, 63));
+		//Text title = new Text();
+		//title.setText("Borrow-Books Library");
+		//title.setX(90);
+		//title.setY(50);
+		//title.setFont(Font.font("verdana",20));
+		//title.setFill(Color.rgb(9, 51, 63));
 		
 		//root.getChildren().add(title);
 		
 		//line
-		Line line = new Line();
-		line.setStartX(90);
-		line.setStartY(60);
-		line.setEndX(800);
-		line.setEndY(60);
+		//Line line = new Line();
+		//line.setStartX(90);
+		//line.setStartY(60);
+		//line.setEndX(800);
+		//line.setEndY(60);
 		
 		//root.getChildren().add(line);
 				
