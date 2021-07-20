@@ -8,7 +8,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class HomeController {
@@ -19,6 +23,9 @@ public class HomeController {
 	@FXML
 	Label lblWelcome;
 	
+	@FXML 
+	private AnchorPane sceneHome;
+	
 	public void displayName(String username) {
 		lblWelcome.setText("Welcome "+username);
 	}
@@ -26,17 +33,17 @@ public class HomeController {
 	
 	public void logout(ActionEvent event){
 		
-		try {
-			root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-			stage =(Stage)((Node)event.getSource()).getScene().getWindow();
-			scene=new Scene(root);
-			stage.setScene(scene);
-			stage.show();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			Alert alert = new Alert(AlertType.CONFIRMATION);
+			alert.setContentText("Are you sure you want to logout");
+			
+			if(alert.showAndWait().get() == ButtonType.OK) {
+				//root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+				stage =(Stage)sceneHome.getScene().getWindow();
+				stage.close();
+
+			}
 		
+
 	}
 
 }
