@@ -24,6 +24,8 @@ public class Main extends Application {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
 			Scene scene = new Scene(root);
+			
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
