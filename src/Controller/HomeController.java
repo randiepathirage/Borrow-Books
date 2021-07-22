@@ -1,7 +1,9 @@
 package Controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
+import Model.HomeModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,10 +14,31 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class HomeController {
+
+    public HomeModel homeModel = new HomeModel();
+
+    @FXML
+    public Label lblStatus;
+    @FXML
+    public TextField txtBookId;
+    @FXML
+    public TextField txtMemberId;
+    @FXML
+    public TextField txtDate;
+    @FXML
+    public TextField txtBookId2;
+    @FXML
+    public TextField txtMemberId2;
+    @FXML
+    public TextField txtDate2;
+    @FXML
+    public Label lblStatus2;
+
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -119,6 +142,36 @@ public class HomeController {
             stage.show();
 
         } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+    public void issueBook(ActionEvent event){
+        try {
+            if(homeModel.isBookIssued(txtBookId.getText(), txtMemberId.getText(),txtDate.getText())) {
+                lblStatus.setText("Book issued");
+
+            }else {
+                System.out.println("error");
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+    public void isReturnBook(ActionEvent event){
+        try {
+            if(homeModel.isReturnBook(txtBookId2.getText(), txtMemberId2.getText(),txtDate2.getText())) {
+                lblStatus2.setText("Book returned");
+
+            }else {
+                System.out.println("error");
+            }
+        } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }

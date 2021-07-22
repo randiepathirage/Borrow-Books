@@ -17,7 +17,6 @@
 
 <AnchorPane fx:id="sceneHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeController">
     <children>
-        <Button layoutX="731.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
         <VBox prefHeight="600.0" prefWidth="177.0">
             <children>
                 <ImageView fitHeight="150.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true">
@@ -36,21 +35,21 @@
                         <Insets left="5.0" top="10.0" />
                     </VBox.margin>
                 </Label>
-                <Label fx:id="lblWelcome" text="Welcome:">
-                    <VBox.margin>
-                        <Insets bottom="10.0" left="5.0" />
-                    </VBox.margin>
-                </Label>
-                <Button fx:id="btnAddBook" mnemonicParsing="false" onAction="#addBook" prefHeight="75.0" prefWidth="178.0" text="Add Book">
+            <Label fx:id="lblWelcome" text="Welcome">
                <VBox.margin>
-                  <Insets top="40.0" />
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </Label>
+                <Button fx:id="btnAddBook" mnemonicParsing="false" onAction="#addBook" prefHeight="80.0" prefWidth="178.0" text="Add Book">
+               <VBox.margin>
+                  <Insets top="33.0" />
                </VBox.margin></Button>
-                <Button mnemonicParsing="false" onAction="#allBooks" prefHeight="75.0" prefWidth="178.0" text="All Books" />
-                <Button fx:id="btnAddBook3" mnemonicParsing="false" onAction="#addMember" prefHeight="75.0" prefWidth="178.0" text="Add Member" />
+                <Button mnemonicParsing="false" onAction="#allBooks" prefHeight="80.0" prefWidth="178.0" text="All Books" />
+                <Button fx:id="btnAddBook3" mnemonicParsing="false" onAction="#addMember" prefHeight="80.0" prefWidth="178.0" text="Add Member" />
                 <Button fx:id="btnAddBook4" mnemonicParsing="false" onAction="#allMembers" prefHeight="75.0" prefWidth="178.0" text="All Members" />
             </children>
         </VBox>
-      <TabPane layoutX="178.0" layoutY="55.0" prefHeight="530.0" prefWidth="606.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="178.0" layoutY="35.0" prefHeight="545.0" prefWidth="606.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Issue Books">
             <content>
@@ -66,18 +65,11 @@
                                     <Insets left="20.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField>
+                              <TextField fx:id="txtBookId">
                                  <HBox.margin>
                                     <Insets left="43.0" />
                                  </HBox.margin>
                               </TextField>
-                           </children>
-                           <padding>
-                              <Insets top="30.0" />
-                           </padding>
-                        </HBox>
-                        <HBox layoutX="14.0" layoutY="66.0" prefHeight="28.0" prefWidth="578.0">
-                           <children>
                               <Label text="Member Id">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
@@ -86,7 +78,7 @@
                                     <Insets left="20.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField>
+                              <TextField fx:id="txtMemberId">
                                  <HBox.margin>
                                     <Insets left="20.0" />
                                  </HBox.margin>
@@ -96,12 +88,37 @@
                               <Insets top="20.0" />
                            </padding>
                         </HBox>
+                        <HBox layoutX="14.0" layoutY="60.0" prefHeight="28.0" prefWidth="578.0">
+                           <children>
+                              <Label text="Date">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtDate">
+                                 <HBox.margin>
+                                    <Insets left="65.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button mnemonicParsing="false" onAction="#issueBook" prefHeight="26.0" prefWidth="101.0" text="Issue Book">
+                                 <HBox.margin>
+                                    <Insets left="165.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </HBox>
                         <Label layoutX="31.0" layoutY="163.0" text="Issued Books">
                            <font>
-                              <Font size="20.0" />
+                              <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
-                        <TableView layoutX="5.0" layoutY="200.0" prefHeight="299.0" prefWidth="596.0">
+                        <TableView layoutX="5.0" layoutY="200.0" prefHeight="314.0" prefWidth="596.0">
                           <columns>
                             <TableColumn prefWidth="75.0" text="ID" />
                             <TableColumn prefWidth="171.20001220703125" text="Title" />
@@ -109,11 +126,12 @@
                               <TableColumn prefWidth="133.60003662109375" text="Publisher" />
                           </columns>
                         </TableView>
+                        <Label fx:id="lblStatus" layoutX="31.0" layoutY="127.0" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Return/Renew books">
+          <Tab text="Return Books">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -127,7 +145,7 @@
                                     <Insets left="20.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField>
+                              <TextField fx:id="txtBookId2">
                                  <HBox.margin>
                                     <Insets left="43.0" />
                                  </HBox.margin>
@@ -147,7 +165,7 @@
                                     <Insets left="20.0" />
                                  </HBox.margin>
                               </Label>
-                              <TextField>
+                              <TextField fx:id="txtMemberId2">
                                  <HBox.margin>
                                     <Insets left="20.0" />
                                  </HBox.margin>
@@ -157,11 +175,34 @@
                               <Insets top="10.0" />
                            </padding>
                         </HBox>
+                        <HBox layoutX="14.0" layoutY="102.0" prefHeight="28.0" prefWidth="578.0">
+                           <children>
+                              <Label text="Date">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtDate2">
+                                 <HBox.margin>
+                                    <Insets left="65.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </HBox>
+                        <Button layoutX="444.0" layoutY="148.0" mnemonicParsing="false" onAction="#isReturnBook" prefHeight="34.0" prefWidth="110.0" text="Return book" />
+                        <Label fx:id="lblStatus2" layoutX="35.0" layoutY="182.0" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
         </tabs>
       </TabPane>
+        <Button layoutX="719.0" layoutY="6.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
     </children>
 </AnchorPane>
