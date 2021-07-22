@@ -29,9 +29,6 @@ public class AddBookController implements Initializable {
     @FXML
     public TextField txtPublisher;
 
-    @FXML
-    public Label lblTitle;
-
     private Stage stage;
     private Scene scene;
     private Parent root;

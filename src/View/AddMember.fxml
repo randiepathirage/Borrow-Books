@@ -31,22 +31,22 @@
                         <Font name="System Bold" size="25.0" />
                     </font>
                 </Label>
-                <TextField promptText="Name">
+                <TextField fx:id="txtName" promptText="Name">
                     <VBox.margin>
                         <Insets left="10.0" right="10.0" top="20.0" />
                     </VBox.margin>
                 </TextField>
-                <TextField layoutX="20.0" layoutY="30.0" promptText="id">
+                <TextField fx:id="txtId" layoutX="20.0" layoutY="30.0" promptText="id">
                     <VBox.margin>
                         <Insets left="10.0" right="10.0" top="20.0" />
                     </VBox.margin>
                 </TextField>
-                <TextField layoutX="10.0" layoutY="56.0" promptText="mobile">
+                <TextField fx:id="txtMobile" layoutX="10.0" layoutY="56.0" promptText="mobile">
                     <VBox.margin>
                         <Insets left="10.0" right="10.0" top="20.0" />
                     </VBox.margin>
                 </TextField>
-                <TextField promptText="email">
+                <TextField fx:id="txtEmail" promptText="email">
                     <VBox.margin>
                         <Insets left="10.0" right="10.0" top="20.0" />
                     </VBox.margin>

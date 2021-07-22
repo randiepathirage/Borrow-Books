@@ -36,7 +36,6 @@ public class AllMembersController {
 
     public void search(ActionEvent event){
         try {
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/SearchMember.fxml"));
             root =loader.load();
 
