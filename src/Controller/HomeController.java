@@ -44,6 +44,7 @@ public class HomeController {
         }
     }
 
+
     public void addBook(ActionEvent event){
         try {
 
@@ -64,4 +65,63 @@ public class HomeController {
 
     }
 
+    public void allBooks(ActionEvent event){
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/AllBooks.fxml"));
+            root =loader.load();
+
+
+            //root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+            stage =(Stage)((Node)event.getSource()).getScene().getWindow();
+            scene=new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+    public void addMember(ActionEvent event){
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/AddMember.fxml"));
+            root =loader.load();
+
+
+            //root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+            stage =(Stage)((Node)event.getSource()).getScene().getWindow();
+            scene=new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+    public void allMembers(ActionEvent event){
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/AllMembers.fxml"));
+            root =loader.load();
+
+
+            //root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+            stage =(Stage)((Node)event.getSource()).getScene().getWindow();
+            scene=new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
 }

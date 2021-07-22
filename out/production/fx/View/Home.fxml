@@ -3,9 +3,15 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -35,12 +41,127 @@
                         <Insets bottom="10.0" left="5.0" />
                     </VBox.margin>
                 </Label>
-                <Button fx:id="btnAddBook" mnemonicParsing="false" onAction="#addBook" prefHeight="68.0" prefWidth="178.0" text="Add Book" />
-                <Button fx:id="btnAddBook1" mnemonicParsing="false" onAction="#addBook" prefHeight="68.0" prefWidth="178.0" text="All Books" />
-                <Button fx:id="btnAddBook2" mnemonicParsing="false" onAction="#addBook" prefHeight="68.0" prefWidth="178.0" text="Issued Books" />
-                <Button fx:id="btnAddBook3" mnemonicParsing="false" onAction="#addBook" prefHeight="68.0" prefWidth="178.0" text="Add Member" />
-                <Button fx:id="btnAddBook4" mnemonicParsing="false" onAction="#addBook" prefHeight="68.0" prefWidth="178.0" text="All Members" />
+                <Button fx:id="btnAddBook" mnemonicParsing="false" onAction="#addBook" prefHeight="75.0" prefWidth="178.0" text="Add Book">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin></Button>
+                <Button mnemonicParsing="false" onAction="#allBooks" prefHeight="75.0" prefWidth="178.0" text="All Books" />
+                <Button fx:id="btnAddBook3" mnemonicParsing="false" onAction="#addMember" prefHeight="75.0" prefWidth="178.0" text="Add Member" />
+                <Button fx:id="btnAddBook4" mnemonicParsing="false" onAction="#allMembers" prefHeight="75.0" prefWidth="178.0" text="All Members" />
             </children>
         </VBox>
+      <TabPane layoutX="178.0" layoutY="55.0" prefHeight="530.0" prefWidth="606.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Issue Books">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="14.0" layoutY="14.0" prefHeight="28.0" prefWidth="578.0">
+                           <children>
+                              <Label text="Book Id">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField>
+                                 <HBox.margin>
+                                    <Insets left="43.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <padding>
+                              <Insets top="30.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="14.0" layoutY="66.0" prefHeight="28.0" prefWidth="578.0">
+                           <children>
+                              <Label text="Member Id">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </HBox>
+                        <Label layoutX="31.0" layoutY="163.0" text="Issued Books">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <TableView layoutX="5.0" layoutY="200.0" prefHeight="299.0" prefWidth="596.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="ID" />
+                            <TableColumn prefWidth="171.20001220703125" text="Title" />
+                              <TableColumn prefWidth="212.0" text="Author" />
+                              <TableColumn prefWidth="133.60003662109375" text="Publisher" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Return/Renew books">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="14.0" layoutY="14.0" prefHeight="28.0" prefWidth="578.0">
+                           <children>
+                              <Label text="Book Id">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField>
+                                 <HBox.margin>
+                                    <Insets left="43.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="14.0" layoutY="66.0" prefHeight="28.0" prefWidth="578.0">
+                           <children>
+                              <Label text="Member Id">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
     </children>
 </AnchorPane>
