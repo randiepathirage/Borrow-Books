@@ -1,24 +1,41 @@
 package Controller;
 
 import Model.AllBooksModel;
+import Model.Book;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.SQLException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class AllBooksController {
+public class AllBooksController implements Initializable {
 
     public AllBooksModel allBooksModel = new AllBooksModel();
 
-    @FXML
-    public TextField txtSearch;
+    @FXML public TextField txtSearch;
+
+    @FXML private TableView<Book> table;
+    @FXML private TableColumn<Book,String> id;
+    @FXML private TableColumn<Book,String> title;
+    @FXML private TableColumn<Book,String> author;
+    @FXML private TableColumn<Book,String> publisher;
+    @FXML private TableColumn<Book,String> status;
+
+    public ObservableList<Book> details = FXCollections.observableArrayList();
+
 
     private Stage stage;
     private Scene scene;
@@ -67,6 +84,21 @@ public class AllBooksController {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }*/
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        allBooksModel.loadTable(details);
+
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        title.setCellValueFactory(new PropertyValueFactory<>("title"));
+        author.setCellValueFactory(new PropertyValueFactory<>("author"));
+        publisher.setCellValueFactory(new PropertyValueFactory<>("publisher"));
+        status.setCellValueFactory(new PropertyValueFactory<>("status"));
+        table.setItems(details);
+
+
 
     }
 }
