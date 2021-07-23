@@ -15,9 +15,6 @@ import java.sql.SQLException;
 
 public class AllBooksModel {
 
-
-
-
     Connection conn;
     public AllBooksModel() {
         DBConnection dbConnection = new DBConnection();
@@ -74,7 +71,5 @@ public class AllBooksModel {
 
         return details;
     }
-
-
 
 }

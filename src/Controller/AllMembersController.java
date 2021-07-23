@@ -1,15 +1,37 @@
 package Controller;
 
+import Model.AllMembersModel;
+import Model.Book;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class AllMembersController {
+public class AllMembersController implements Initializable {
+
+    public AllMembersModel allMembersModel=new AllMembersModel();
+
+    @FXML private TableView<Book> table;
+    @FXML private TableColumn<Book,String> id;
+    @FXML private TableColumn<Book,String> name;
+    @FXML private TableColumn<Book,String> mobile;
+    @FXML private TableColumn<Book,String> email;
+
+    public ObservableList<Book> details = FXCollections.observableArrayList();
+
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -53,5 +75,17 @@ public class AllMembersController {
             e.printStackTrace();
         }
 
+    }
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        allMembersModel.loadTable(details);
+
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        mobile.setCellValueFactory(new PropertyValueFactory<>("mobile"));
+        email.setCellValueFactory(new PropertyValueFactory<>("email"));
+        table.setItems(details);
     }
 }
