@@ -1,0 +1,22 @@
+.button{
+    -fx-background-color:#09333F;
+    -fx-text-fill: #FFFFFF;
+}
+
+.button:hover{
+    -fx-background-color:#0A3B4A;
+}
+
+
+
+#btnCancel{
+    -fx-background-color:#df4759;
+    -fx-text-fill: #FFFFFF;
+}
+
+#btnCancel:hover{
+    -fx-background-color:#E83842;
+}
+
+
+

@@ -24,6 +24,7 @@ public class SearchBookController {
             //root = FXMLLoader.load(getClass().getResource("Home.fxml"));
             stage =(Stage)((Node)event.getSource()).getScene().getWindow();
             scene=new Scene(root);
+            scene.getStylesheets().add("/Main/main.css");
             stage.setScene(scene);
             stage.show();
 
@@ -44,6 +45,7 @@ public class SearchBookController {
             //root = FXMLLoader.load(getClass().getResource("Home.fxml"));
             stage =(Stage)((Node)event.getSource()).getScene().getWindow();
             scene=new Scene(root);
+            scene.getStylesheets().add("/Main/main.css");
             stage.setScene(scene);
             stage.show();
 

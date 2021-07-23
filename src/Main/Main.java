@@ -17,7 +17,7 @@ public class Main extends Application {
             Parent root = FXMLLoader.load(getClass().getResource("../View/Login.fxml"));
             Scene scene = new Scene(root);
 
-            //scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("main.css").toExternalForm());
             primaryStage.setScene(scene);
         } catch (IOException e) {
             // TODO Auto-generated catch block

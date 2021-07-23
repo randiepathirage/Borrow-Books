@@ -43,6 +43,7 @@ public class AddMemberController implements Initializable {
             //root = FXMLLoader.load(getClass().getResource("Home.fxml"));
             stage =(Stage)((Node)event.getSource()).getScene().getWindow();
             scene=new Scene(root);
+            scene.getStylesheets().add("/Main/main.css");
             stage.setScene(scene);
             stage.show();
 
@@ -71,6 +72,7 @@ public class AddMemberController implements Initializable {
                 //root = FXMLLoader.load(getClass().getResource("Home.fxml"));
                 stage =(Stage)((Node)event.getSource()).getScene().getWindow(); // open the next window in the curent window
                 scene=new Scene(root);
+                scene.getStylesheets().add("/Main/main.css");
                 stage.setScene(scene);
                 stage.show();
             }else {

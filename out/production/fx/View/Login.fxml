@@ -14,51 +14,59 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
     <children>
-        <VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <children>
-                <ImageView fitHeight="91.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Main/icon.png" />
-                    </image>
-                    <VBox.margin>
-                        <Insets bottom="20.0" top="-80.0" />
-                    </VBox.margin>
-                </ImageView>
-                <Label text="Borrow-Books Library " textFill="#09333f">
-                    <font>
-                        <Font name="System Bold" size="25.0" />
-                    </font>
-                    <VBox.margin>
-                        <Insets bottom="20.0" />
-                    </VBox.margin>
-                </Label>
-                <HBox alignment="CENTER" prefHeight="58.0" prefWidth="600.0">
-                    <children>
-                        <Label text="Username">
-                            <HBox.margin>
-                                <Insets right="10.0" />
-                            </HBox.margin>
-                        </Label>
-                        <TextField fx:id="txtUsername" alignment="CENTER" />
-                    </children>
-                </HBox>
-                <HBox alignment="CENTER" prefHeight="55.0" prefWidth="600.0">
-                    <children>
-                        <Label text="Password">
-                            <HBox.margin>
-                                <Insets right="10.0" />
-                            </HBox.margin>
-                        </Label>
-                        <PasswordField fx:id="txtPassword" alignment="CENTER" />
-                    </children>
-                </HBox>
-                <Button fx:id="loginbtn" mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="314.0" text="Login">
-                    <VBox.margin>
-                        <Insets bottom="10.0" top="30.0" />
-                    </VBox.margin>
-                </Button>
-                <Label fx:id="lblStatus" textFill="RED" />
-            </children>
-        </VBox>
+      <HBox prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="600.0" prefWidth="642.0" style="-fx-background-color: #09333F;">
+               <children>
+                      <ImageView fitHeight="91.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../Main/icon.png" />
+                          </image>
+                      </ImageView>
+                      <Label text="Borrow-Books Library " textFill="#29dba0">
+                          <font>
+                              <Font name="System Bold" size="25.0" />
+                          </font>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                      </Label>
+               </children>
+            </VBox>
+              <VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0">
+                  <children>
+                      <HBox alignment="CENTER" prefHeight="58.0" prefWidth="600.0">
+                          <children>
+                              <Label text="Username">
+                                  <HBox.margin>
+                                      <Insets right="10.0" />
+                                  </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtUsername" alignment="CENTER" />
+                          </children>
+                      </HBox>
+                      <HBox alignment="CENTER" prefHeight="55.0" prefWidth="600.0">
+                          <children>
+                              <Label text="Password">
+                                  <HBox.margin>
+                                      <Insets right="10.0" />
+                                  </HBox.margin>
+                              </Label>
+                              <PasswordField fx:id="txtPassword" alignment="CENTER" />
+                          </children>
+                      </HBox>
+                      <Button fx:id="loginbtn" mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="209.0" text="Login" textFill="#8fb4a7">
+                          <VBox.margin>
+                              <Insets bottom="10.0" top="20.0" />
+                          </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                      </Button>
+                      <Label fx:id="lblStatus" textFill="RED" />
+                  </children>
+              </VBox>
+         </children>
+      </HBox>
     </children>
 </AnchorPane>

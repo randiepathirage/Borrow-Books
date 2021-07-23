@@ -17,39 +17,80 @@
 
 <AnchorPane fx:id="sceneHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeController">
     <children>
-        <VBox prefHeight="600.0" prefWidth="177.0">
-            <children>
-                <ImageView fitHeight="150.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true">
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: #09333f;">
+         <children>
+                <ImageView fitHeight="94.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../Main/icon.png" />
                     </image>
-                    <VBox.margin>
-                        <Insets left="15.0" top="25.0" />
-                    </VBox.margin>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
                 </ImageView>
-                <Label text="Brrow-Books Library" textFill="#09333f">
-                    <font>
-                        <Font size="19.0" />
-                    </font>
-                    <VBox.margin>
-                        <Insets left="5.0" top="10.0" />
-                    </VBox.margin>
-                </Label>
-            <Label fx:id="lblWelcome" text="Welcome">
+            <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="624.0">
+               <children>
+                      <Label prefHeight="30.0" prefWidth="206.0" text="Brrow-Books Library" textFill="WHITE">
+                          <font>
+                              <Font name="System Bold" size="20.0" />
+                          </font>
+                      </Label>
+                  <Label fx:id="lblWelcome" prefHeight="22.0" prefWidth="261.0" text="Welcome" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </VBox>
+              <Button mnemonicParsing="false" onAction="#logout" text="Logout">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+        <VBox layoutY="94.0" prefHeight="506.0" prefWidth="176.0" style="-fx-background-color: #09333F;">
+            <children>
+            <ImageView fitHeight="94.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Main/book.png" />
+               </image>
                <VBox.margin>
-                  <Insets left="5.0" />
+                  <Insets left="50.0" top="30.0" />
                </VBox.margin>
-            </Label>
-                <Button fx:id="btnAddBook" mnemonicParsing="false" onAction="#addBook" prefHeight="80.0" prefWidth="178.0" text="Add Book">
+            </ImageView>
+                <Button fx:id="btnAddBook" mnemonicParsing="false" onAction="#addBook" prefHeight="55.0" prefWidth="180.0" text="Add Book">
                <VBox.margin>
-                  <Insets top="33.0" />
-               </VBox.margin></Button>
-                <Button mnemonicParsing="false" onAction="#allBooks" prefHeight="80.0" prefWidth="178.0" text="All Books" />
-                <Button fx:id="btnAddBook3" mnemonicParsing="false" onAction="#addMember" prefHeight="80.0" prefWidth="178.0" text="Add Member" />
-                <Button fx:id="btnAddBook4" mnemonicParsing="false" onAction="#allMembers" prefHeight="75.0" prefWidth="178.0" text="All Members" />
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+                <Button mnemonicParsing="false" onAction="#allBooks" prefHeight="55.0" prefWidth="180.0" text="All Books">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <ImageView fitHeight="94.0" fitWidth="80.0" layoutX="60.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Main/member.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="50.0" top="50.0" />
+               </VBox.margin>
+            </ImageView>
+                <Button fx:id="btnAddBook3" mnemonicParsing="false" onAction="#addMember" prefHeight="55.0" prefWidth="178.0" text="Add Member">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+                <Button fx:id="btnAddBook4" mnemonicParsing="false" onAction="#allMembers" prefHeight="55.0" prefWidth="178.0" text="All Members">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
             </children>
         </VBox>
-      <TabPane layoutX="178.0" layoutY="35.0" prefHeight="545.0" prefWidth="606.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="178.0" layoutY="101.0" prefHeight="499.0" prefWidth="624.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Issue Books">
             <content>
@@ -113,12 +154,12 @@
                               <Insets top="20.0" />
                            </padding>
                         </HBox>
-                        <Label layoutX="31.0" layoutY="163.0" text="Issued Books">
+                        <Label layoutX="31.0" layoutY="136.0" text="Issued Books">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
-                        <TableView layoutX="5.0" layoutY="200.0" prefHeight="314.0" prefWidth="596.0">
+                        <TableView layoutX="5.0" layoutY="165.0" prefHeight="302.0" prefWidth="617.0">
                           <columns>
                             <TableColumn prefWidth="75.0" text="ID" />
                             <TableColumn prefWidth="171.20001220703125" text="Title" />
@@ -203,6 +244,5 @@
           </Tab>
         </tabs>
       </TabPane>
-        <Button layoutX="719.0" layoutY="6.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
     </children>
 </AnchorPane>
