@@ -52,7 +52,7 @@ public class SearchBookController {
     public void updateBook(ActionEvent event){
         try {
 
-            if(searchBookModel.isUpdate(txtCode.getText())){
+            if(searchBookModel.isUpdate(txtCode.getText(),txtTitle.getText(),txtAuthor.getText(),txtPublisher.getText())){
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/Home.fxml"));
                 root =loader.load();
 

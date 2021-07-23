@@ -47,17 +47,20 @@ public class SearchBookModel {
         return details;
     }
 
-    public boolean isUpdate(String id) {
+    public boolean isUpdate(String id,String title, String author,String publisher) {
         PreparedStatement preparedStatement =null;
-        boolean resultSet;
-        String query= "DELETE FROM books WHERE code=?";
+        int resultSet;
+        String query= "UPDATE books SET title=?,author=?,publisher=? WHERE code=?";
 
         try {
             preparedStatement  =conn.prepareStatement(query);
-            preparedStatement.setString(1,id);
-            resultSet = preparedStatement.execute();
+            preparedStatement.setString(1,title);
+            preparedStatement.setString(2,author);
+            preparedStatement.setString(3,publisher);
+            preparedStatement.setString(4,id);
+            resultSet=preparedStatement.executeUpdate();
 
-            if(resultSet) {
+            if(resultSet>=1) {
                 return true;
             }else{
                 return false;
@@ -67,7 +70,6 @@ public class SearchBookModel {
             throwables.printStackTrace();
             return false;
         }
-
     }
 
     public boolean isDelete(String id) {
