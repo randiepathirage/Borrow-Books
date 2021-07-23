@@ -88,7 +88,7 @@
             </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#cancel" prefHeight="47.0" prefWidth="135.0" text="Delete" textAlignment="CENTER">
+                        <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteBook" prefHeight="47.0" prefWidth="135.0" text="Delete" textAlignment="CENTER">
                             <HBox.margin>
                                 <Insets bottom="10.0" top="10.0" />
                             </HBox.margin>

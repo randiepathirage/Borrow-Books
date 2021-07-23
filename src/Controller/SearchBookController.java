@@ -52,20 +52,48 @@ public class SearchBookController {
     public void updateBook(ActionEvent event){
         try {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/Home.fxml"));
-            root =loader.load();
+            if(searchBookModel.isUpdate(txtCode.getText())){
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/Home.fxml"));
+                root =loader.load();
 
 
-            //root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-            stage =(Stage)((Node)event.getSource()).getScene().getWindow();
-            scene=new Scene(root);
-            scene.getStylesheets().add("/Main/main.css");
-            stage.setScene(scene);
-            stage.show();
+                //root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+                stage =(Stage)((Node)event.getSource()).getScene().getWindow();
+                scene=new Scene(root);
+                scene.getStylesheets().add("/Main/main.css");
+                stage.setScene(scene);
+                stage.show();
+
+            }
 
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        }
+
+    }
+
+    public void deleteBook(ActionEvent event){
+        try {
+
+            if(searchBookModel.isDelete(txtCode.getText())){
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/Home.fxml"));
+                root =loader.load();
+
+
+                //root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+                stage =(Stage)((Node)event.getSource()).getScene().getWindow();
+                scene=new Scene(root);
+                scene.getStylesheets().add("/Main/main.css");
+                stage.setScene(scene);
+                stage.show();
+
+            }
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("error");
         }
 
     }

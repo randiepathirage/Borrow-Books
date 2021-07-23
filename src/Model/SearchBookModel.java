@@ -46,4 +46,50 @@ public class SearchBookModel {
         }
         return details;
     }
+
+    public boolean isUpdate(String id) {
+        PreparedStatement preparedStatement =null;
+        boolean resultSet;
+        String query= "DELETE FROM books WHERE code=?";
+
+        try {
+            preparedStatement  =conn.prepareStatement(query);
+            preparedStatement.setString(1,id);
+            resultSet = preparedStatement.execute();
+
+            if(resultSet) {
+                return true;
+            }else{
+                return false;
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return false;
+        }
+
+    }
+
+    public boolean isDelete(String id) {
+        PreparedStatement preparedStatement =null;
+        boolean resultSet;
+        String query= "DELETE FROM books WHERE code=?";
+
+        try {
+            preparedStatement  =conn.prepareStatement(query);
+            preparedStatement.setString(1,id);
+            resultSet = preparedStatement.execute();
+
+            if(!resultSet) {
+                return true;
+            }else{
+                return false;
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return false;
+        }
+
+    }
 }
