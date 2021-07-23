@@ -70,6 +70,9 @@ public class AllBooksController implements Initializable {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/SearchBook.fxml"));
                 root =loader.load();
 
+                SearchBookController searchBookController =loader.getController();
+                searchBookController.displayDetails(txtSearch.getText());
+
                 //root = FXMLLoader.load(getClass().getResource("Home.fxml"));
                 stage =(Stage)((Node)event.getSource()).getScene().getWindow();
                 scene=new Scene(root);

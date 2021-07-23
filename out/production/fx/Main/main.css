@@ -9,12 +9,12 @@
 
 
 
-#btnCancel{
+#btnDelete{
     -fx-background-color:#df4759;
     -fx-text-fill: #FFFFFF;
 }
 
-#btnCancel:hover{
+#btnDelete:hover{
     -fx-background-color:#E83842;
 }
 

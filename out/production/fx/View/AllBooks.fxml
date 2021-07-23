@@ -53,7 +53,7 @@
                         <Insets right="5.0" />
                      </HBox.margin>
                   </TextField>
-                  <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#search" text="search" />
+                  <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#search" text="View" />
                </children>
                <VBox.margin>
                   <Insets bottom="20.0" />

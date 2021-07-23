@@ -67,6 +67,8 @@ public class AllMembersController implements Initializable {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/SearchMember.fxml"));
                 root =loader.load();
 
+                SearchMemberController searchMemberController =loader.getController();
+                searchMemberController.displayDetails(txtSearch.getText());
 
                 //root = FXMLLoader.load(getClass().getResource("Home.fxml"));
                 stage =(Stage)((Node)event.getSource()).getScene().getWindow();
@@ -85,7 +87,6 @@ public class AllMembersController implements Initializable {
         }
 
     }
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

@@ -1,15 +1,29 @@
 package Controller;
 
+import Model.Member;
+import Model.SearchBookModel;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class SearchBookController {
+
+    public SearchBookModel searchBookModel =new SearchBookModel();
+    public ArrayList<Member> details = new ArrayList();
+
+    @FXML public TextField txtCode;
+    @FXML public TextField txtTitle;
+    @FXML public TextField txtAuthor;
+    @FXML public TextField txtPublisher;
+
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -54,6 +68,16 @@ public class SearchBookController {
             e.printStackTrace();
         }
 
+    }
+
+    public void displayDetails(String id) {
+
+        searchBookModel.getDetails(id,details);
+
+        txtCode.setText(id);
+        txtTitle.setText(String.valueOf(details.get(1)));
+        txtAuthor.setText(String.valueOf(details.get(2)));
+        txtPublisher.setText(String.valueOf(details.get(3)));
     }
 
 }
