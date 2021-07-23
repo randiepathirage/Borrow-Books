@@ -4,6 +4,7 @@ import Connectivity.DBConnection;
 import javafx.collections.ObservableList;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -35,5 +36,28 @@ public class AllMembersModel {
         }
 
         return details;
+    }
+
+    public boolean getBook(String id) throws SQLException {
+        PreparedStatement preparedStatement =null;
+        ResultSet resultSet =null;
+        String query= "SELECT * FROM member WHERE id=?";
+
+        try {
+            preparedStatement  =conn.prepareStatement(query);
+            preparedStatement.setString(1,id);
+
+            resultSet = preparedStatement.executeQuery();
+            if(resultSet.next()) {
+                return true;
+            }else {
+                return false;
+            }
+        } catch (SQLException e) {
+            return false;
+        }finally{
+            preparedStatement.close();
+            //resultSet.close();
+        }
     }
 }

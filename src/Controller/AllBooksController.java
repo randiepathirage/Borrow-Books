@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AllBooksController implements Initializable {
@@ -63,9 +64,8 @@ public class AllBooksController implements Initializable {
     }
 
     public void search(ActionEvent event){
-       /* try {
-
-            if(allBooksModel.getBook(txtSearch.getText())) {
+        try {
+            if(allBooksModel.getBook(txtSearch.getText())){
 
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/SearchBook.fxml"));
                 root =loader.load();
@@ -80,10 +80,9 @@ public class AllBooksController implements Initializable {
                 System.out.println("error");
             }
 
-        } catch (IOException | SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }*/
+            } catch (SQLException | IOException throwables) {
+            throwables.printStackTrace();
+        }
 
     }
 

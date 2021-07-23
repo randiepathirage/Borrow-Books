@@ -13,16 +13,20 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AllMembersController implements Initializable {
 
     public AllMembersModel allMembersModel=new AllMembersModel();
+
+    @FXML public TextField txtSearch;
 
     @FXML private TableView<Book> table;
     @FXML private TableColumn<Book,String> id;
@@ -59,18 +63,23 @@ public class AllMembersController implements Initializable {
 
     public void search(ActionEvent event){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/SearchMember.fxml"));
-            root =loader.load();
+            if(allMembersModel.getBook(txtSearch.getText())){
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/SearchMember.fxml"));
+                root =loader.load();
 
 
-            //root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-            stage =(Stage)((Node)event.getSource()).getScene().getWindow();
-            scene=new Scene(root);
-            scene.getStylesheets().add("/Main/main.css");
-            stage.setScene(scene);
-            stage.show();
+                //root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+                stage =(Stage)((Node)event.getSource()).getScene().getWindow();
+                scene=new Scene(root);
+                scene.getStylesheets().add("/Main/main.css");
+                stage.setScene(scene);
+                stage.show();
 
-        } catch (IOException e) {
+            }else {
+                System.out.println("error");
+            }
+
+        } catch (IOException | SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }

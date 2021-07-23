@@ -48,12 +48,12 @@
                                 <Insets right="10.0" />
                             </HBox.margin>
                         </Label>
-                        <TextField>
+                        <TextField fx:id="txtSearch">
                             <HBox.margin>
                                 <Insets right="5.0" />
                             </HBox.margin>
                         </TextField>
-                        <Button mnemonicParsing="false" onAction="#search" text="search" />
+                        <Button mnemonicParsing="false" onAction="#search" text="View" />
                     </children>
                     <VBox.margin>
                         <Insets bottom="20.0" />

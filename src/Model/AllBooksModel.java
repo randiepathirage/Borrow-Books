@@ -27,31 +27,27 @@ public class AllBooksModel {
         }
     }
 
-    public void getBook(String id) throws SQLException {
-
-    /*    ObservableList<Book> techList = FXCollections.observableArrayList();
+    public boolean getBook(String id) throws SQLException {
         PreparedStatement preparedStatement =null;
         ResultSet resultSet =null;
-        String query= "SELECT * FROM books WHERE title=?";
-        Book bookDetails;
+        String query= "SELECT * FROM books WHERE code=?";
 
         try {
             preparedStatement  =conn.prepareStatement(query);
             preparedStatement.setString(1,id);
 
             resultSet = preparedStatement.executeQuery();
-
-            while(resultSet.next()) {
-                bookDetails = new Book(resultSet.getString("code"),resultSet.getString("title"),resultSet.getString("author"),resultSet.getString("publisher"));
-                techList.add(bookDetails);
+            if(resultSet.next()) {
+                return true;
+            }else {
+                return false;
             }
-            return techList;
         } catch (SQLException e) {
-           // Logger.getLogger(ViewTeachersController.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
         }finally{
             preparedStatement.close();
             //resultSet.close();
-        }*/
+        }
     }
 
     public ObservableList loadTable(ObservableList details){
