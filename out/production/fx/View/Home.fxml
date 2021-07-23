@@ -159,12 +159,12 @@
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
-                        <TableView layoutX="5.0" layoutY="165.0" prefHeight="302.0" prefWidth="617.0">
+                        <TableView fx:id="table" layoutX="5.0" layoutY="165.0" prefHeight="302.0" prefWidth="617.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="ID" />
-                            <TableColumn prefWidth="171.20001220703125" text="Title" />
-                              <TableColumn prefWidth="212.0" text="Author" />
-                              <TableColumn prefWidth="133.60003662109375" text="Publisher" />
+                            <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="title" prefWidth="171.20001220703125" text="Title" />
+                              <TableColumn fx:id="author" prefWidth="212.0" text="Author" />
+                              <TableColumn fx:id="publisher" prefWidth="155.2000732421875" text="Publisher" />
                           </columns>
                         </TableView>
                         <Label fx:id="lblStatus" layoutX="31.0" layoutY="127.0" />

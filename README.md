@@ -7,7 +7,7 @@
 
 ### Main Functionalities 
 1. Login
-2. Add user
-3. Add books
-4. Issue books
-5. Return books
+2. Add,View, edit, delete users and books details
+3. Issue books
+4. Return books
+6. Search books and users

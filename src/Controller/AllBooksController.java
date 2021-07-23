@@ -98,7 +98,5 @@ public class AllBooksController implements Initializable {
         status.setCellValueFactory(new PropertyValueFactory<>("status"));
         table.setItems(details);
 
-
-
     }
 }

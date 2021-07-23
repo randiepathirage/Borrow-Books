@@ -1,53 +1,55 @@
 package Controller;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
+import Model.Book;
 import Model.HomeModel;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class HomeController {
+public class HomeController implements Initializable {
 
     public HomeModel homeModel = new HomeModel();
 
-    @FXML
-    public Label lblStatus;
-    @FXML
-    public TextField txtBookId;
-    @FXML
-    public TextField txtMemberId;
-    @FXML
-    public TextField txtDate;
-    @FXML
-    public TextField txtBookId2;
-    @FXML
-    public TextField txtMemberId2;
-    @FXML
-    public TextField txtDate2;
-    @FXML
-    public Label lblStatus2;
+    @FXML private TableView<Book> table;
+    @FXML private TableColumn<Book,String> id;
+    @FXML private TableColumn<Book,String> title;
+    @FXML private TableColumn<Book,String> author;
+    @FXML private TableColumn<Book,String> publisher;
+    @FXML private TableColumn<Book,String> status;
+
+    public ObservableList<Book> details = FXCollections.observableArrayList();
+
+    @FXML public Label lblStatus;
+    @FXML public TextField txtBookId;
+    @FXML public TextField txtMemberId;
+    @FXML public TextField txtDate;
+    @FXML public TextField txtBookId2;
+    @FXML public TextField txtMemberId2;
+    @FXML public TextField txtDate2;
+    @FXML public Label lblStatus2;
 
     private Stage stage;
     private Scene scene;
     private Parent root;
 
-    @FXML
-    Label lblWelcome;
-
-    @FXML
-    private AnchorPane sceneHome;
+    @FXML Label lblWelcome;
+    @FXML private AnchorPane sceneHome;
 
     public void displayName(String username) {
         lblWelcome.setText("Welcome "+username);
@@ -179,6 +181,18 @@ public class HomeController {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        homeModel.loadTable(details);
+
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        title.setCellValueFactory(new PropertyValueFactory<>("title"));
+        author.setCellValueFactory(new PropertyValueFactory<>("author"));
+        publisher.setCellValueFactory(new PropertyValueFactory<>("publisher"));
+        table.setItems(details);
 
     }
 }

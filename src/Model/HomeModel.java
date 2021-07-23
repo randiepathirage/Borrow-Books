@@ -1,11 +1,9 @@
 package Model;
 
 import Connectivity.DBConnection;
+import javafx.collections.ObservableList;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class HomeModel {
     Connection conn;
@@ -87,6 +85,24 @@ public class HomeModel {
             preparedStatement.close();
             //resultSet.close();
         }
+    }
+
+    public ObservableList loadTable(ObservableList details){
+        try {
+            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM books WHERE status ='issued'");
+            while (rs.next()){
+                details.add(new Book(
+                        rs.getString("code"),
+                        rs.getString("title"),
+                        rs.getString("author"),
+                        rs.getString("publisher"),
+                        rs.getString("status")));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return details;
     }
 
 
