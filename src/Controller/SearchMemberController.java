@@ -57,17 +57,19 @@ public class SearchMemberController implements Initializable {
 
     public void updateMember(ActionEvent event){
         try {
+            if(searchMemberModel.isUpdate(txtId.getText(),txtName.getText(),txtMobile.getText(),txtEmail.getText())) {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/Home.fxml"));
-            root =loader.load();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/Home.fxml"));
+                root = loader.load();
 
 
-            //root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-            stage =(Stage)((Node)event.getSource()).getScene().getWindow();
-            scene=new Scene(root);
-            scene.getStylesheets().add("/Main/main.css");
-            stage.setScene(scene);
-            stage.show();
+                //root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                scene.getStylesheets().add("/Main/main.css");
+                stage.setScene(scene);
+                stage.show();
+            }
 
         } catch (IOException e) {
             // TODO Auto-generated catch block
@@ -78,20 +80,19 @@ public class SearchMemberController implements Initializable {
 
     public void deleteMember(ActionEvent event){
         try {
-            if(true){
+            if(searchMemberModel.isDelete(txtId.getText())){
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/Home.fxml"));
+                root =loader.load();
+
+
+                //root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+                stage =(Stage)((Node)event.getSource()).getScene().getWindow();
+                scene=new Scene(root);
+                scene.getStylesheets().add("/Main/main.css");
+                stage.setScene(scene);
+                stage.show();
 
             }
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/Home.fxml"));
-            root =loader.load();
-
-
-            //root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-            stage =(Stage)((Node)event.getSource()).getScene().getWindow();
-            scene=new Scene(root);
-            scene.getStylesheets().add("/Main/main.css");
-            stage.setScene(scene);
-            stage.show();
 
         } catch (IOException e) {
             // TODO Auto-generated catch block
